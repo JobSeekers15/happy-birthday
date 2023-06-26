@@ -1,158 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Job Links</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    
-    h1 {
-      text-align: center;
-    }
-    
-    .job-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .job {
-      margin-bottom: 20px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      text-align: center;
-      background-color: #f5f5f5;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
-      max-width: 600px;
-      width: 100%;
-    }
-    
-    .job:hover {
-      background-color: #eaeaea;
-    }
-    
-    .job h3 {
-      margin: 0;
-      font-size: 24px;
-    }
-    
-    .job p {
-      margin-top: 10px;
-      font-size: 16px;
-    }
-    
-    .job a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 5px;
-      background-color: #4caf50;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      transition: background-color 0.3s ease;
-    }
-    
-    .job a:hover {
-      background-color: #45a049;
-    }
-    
-    @media (max-width: 600px) {
-      .job-container {
-        padding: 10px;
-      }
-      
-      .job {
-        margin-bottom: 10px;
-      }
-      
-      .job h3 {
-        font-size: 20px;
-      }
-      
-      .job p {
-        font-size: 14px;
-      }
-      
-      .job a {
-        font-size: 16px;
-      }
-    }
-  </style>
+    <title>Birthday Wishes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        p {
+            color: #666666;
+            font-size: 18px;
+            line-height: 1.5;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <h1>Job Links</h1>
-  
-  <div id="jobContainer" class="job-container"></div>
+    <div class="container" id="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
-  <script>
-    // Define an array of job links
-    var jobLinks = [
-      {
-        title: "Bajaj Finserv is Hiring",
-        description: "2024,2025 & 2026",
-        url: "https://unstop.com/competitions/hackrx-40-bajaj-finserv-689286?ref=nDZ87lZW"
-      },
-      {
-        title: "Cisco Hiring",
-        description: "2024",
-        url: "https://app.smartsheet.com/b/form/58c99bbbf62b47029d9862f6fdf58006"
-      },
-      {
-        title: "Nvidia is Hiring",
-        description: "Hiring 2022 and 2023",
-        url: "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/India-Bengaluru/System-Software-Engineer--Tegra-Compute---New-College-Graduate_JR1967252"
-      },
-      {
-        title: "ACCENTURE MASS HIRING ",
-        description: "SYSTEM & APPLICATION SERVICE ASSOCIATE",
-        url: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/3627/job-details"
-      },
-      {
-        title: "DELOITTE IS HIRING",
-        description: "JUNIOR QUALITY ANALYST",
-        url: "https://www.linkedin.com/jobs/view/3633970563/"
-      }
-      // Add more job links here
-    ];
-    
-    // Function to create job link elements
-    function createJobLinkElement(job) {
-      var jobDiv = document.createElement("div");
-      jobDiv.className = "job";
-      
-      var titleHeading = document.createElement("h3");
-      titleHeading.textContent = job.title;
-      
-      var descriptionPara = document.createElement("p");
-      descriptionPara.textContent = job.description;
-      
-      var link = document.createElement("a");
-      link.href = job.url;
-      link.target = "_blank";
-      link.textContent = "Apply Now";
-      
-      jobDiv.appendChild(titleHeading);
-      jobDiv.appendChild(descriptionPara);
-      jobDiv.appendChild(link);
-      
-      return jobDiv;
-    }
-    
-    // Get the job container element
-    var jobContainer = document.getElementById("jobContainer");
-    
-    // Loop through the job links array in reverse order to display newer jobs on top
-    for (var i = jobLinks.length - 1; i >= 0; i--) {
-      var jobLinkElement = createJobLinkElement(jobLinks[i]);
-      jobContainer.appendChild(jobLinkElement);
-    }
-  </script>
+    <div class="container hidden" id="birthday-container">
+        <h1>Birthday Wishes for Jahnavi</h1>
+        <img src="C:\Users\vamshi krishna\Desktop\IMG-20230526-WA0018.jpg" alt="Birthday Girl" id="birthday-image">
+        <p id="birthday-wishes">Happy birthday! May this special day bring you joy, laughter, and wonderful memories. Wishing you all the best on your birthday and always.</p>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username === "jahnavi" && password === "jahnavi26") {
+                document.getElementById("login-container").classList.add("hidden");
+                document.getElementById("birthday-container").classList.remove("hidden");
+                setTimeout(function() {
+                    document.getElementById("birthday-image").style.opacity = "1";
+                    document.getElementById("birthday-wishes").style.opacity = "1";
+                }, 500); // Delay the appearance of the image and wishes section
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>
